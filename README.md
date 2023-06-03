@@ -15,10 +15,9 @@ You can then flash this file in your keyboard:
 This repo uses:
 - nix to build the repo
 - The [official Glove80 ZMK Distribution](https://github.com/moergo-sc/zmk). Repositiory for ZMK firmware customized for Glove80.
-- https://github.com/urob/zmk-nodefree-config which add convenient macros and international characters
 
 
-Both are imported as git-submodules. See [here](https://devconnected.com/how-to-add-and-update-git-submodules/) for a quick doc.
+Glove80 zmk disctribution is imported as git-submodules. See [here](https://devconnected.com/how-to-add-and-update-git-submodules/) for a quick doc.
 
 Initial pull: `git submodule update --init --recursive`
 
