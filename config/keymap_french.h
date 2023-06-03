@@ -67,7 +67,7 @@
 #define FR_Q    A    // Q
 #define FR_S    S    // S
 #define FR_D    D    // D
-#define FR_F    F    // F1234567890000.....
+#define FR_F    F    // F
 #define FR_G    G    // G
 #define FR_H    H    // H
 #define FR_J    J    // J
