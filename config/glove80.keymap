@@ -36,6 +36,7 @@ The actual index of the layers is the one in keymap which are zero indexed.
 #define BASE    0
 #define LOWER    1
 #define MAGIC    2
+#define ACCENT   3
 
 / {
     /* Glove80 system behavior & macros */
@@ -83,6 +84,39 @@ The actual index of the layers is the one in keymap which are zero indexed.
                 ;
         };
     };
+
+
+    #define MACRO(name, keys)             \
+    name: name##_macro {                  \
+        label = #name;                    \
+        compatible = "zmk,behavior-macro";\
+        #binding-cells = <0>;             \
+        tap-ms = <1>;                     \
+        wait-ms = <1>;                    \
+        bindings = <keys>;                \
+    };
+
+
+    // french accentuated letters
+    #define diaeresis(name, key)    \
+    MACRO(fr_ ## name ## _diaeresis, &kp FR_DIAE &kp key)
+
+    #define circumflex(name, key)    \
+    MACRO(fr_ ## name ## _circumflex, &kp FR_CIRC &kp key)
+
+    macros {
+        circumflex(a, Q)
+        circumflex(e, E)
+        circumflex(i, I)
+        circumflex(o, O)
+        circumflex(u, U)
+        diaeresis(a, Q)
+        diaeresis(e, E)
+        diaeresis(i, I)
+        diaeresis(o, O)
+        diaeresis(u, U)
+    };
+
 
     macros {
         bt_0: bt_profile_macro_0 {
@@ -148,14 +182,14 @@ The actual index of the layers is the one in keymap which are zero indexed.
             bindings = <
 &kp F1      &kp F2      &kp F3  &kp F4      &kp F5                                                                                                      &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
 &kp EQUAL   &kp N1      &kp N2  &kp N3      &kp N4      &kp N5                                                                                  &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp F11
-&kp TAB     &kp Q       &kp W   &kp E       &kp R       &kp T                                                                                   &kp Y   &kp U   &kp I       &kp O       &kp P       &kp BSLH
-&kp ESC     &kp A       &kp S   &kp D       &kp F       &kp G                                                                                   &kp H   &kp J   &kp K       &kp L       &kp SEMI    &kp SQT
+&kp TAB     &kp Q       &kp W   &kp E       &kp R       &kp T                                                                                   &kp Y   &kp U   &kp I       &kp O       &kp P       &none
+&kp ESC     &kp A       &kp S   &kp D       &kp F       &kp G                                                                                   &kp H   &kp J   &kp K       &kp L       &kp SEMI    &sl ACCENT
 &s_d_cl     &kp Z       &kp X   &kp C       &kp V       &kp B       &kp BSPC        &s_d_cl &kp END         &kp PG_UP   &kp RCTRL   &kp RSHFT   &kp N   &kp M   &kp COMMA   &kp DOT     &kp FSLH    &kp PG_UP
 &kp LCTRL   &kp LALT    &kp LGUI&kp LEFT    &kp RIGHT               &lt LOWER SPACE &meh    &kp HOME        &kp PG_DN   &kp RCTRL   &kp RET             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC BASE
             >;
         };
 
-        layer_Lower {
+        lower_layer {
             bindings = <
 &trans  &trans          &kp C_PREV  &kp C_NEXT  &kp C_PP                                                                                            &kp C_MUTE  &kp C_VOL_DN    &kp C_VOL_UP    &none           &kp PAUSE_BREAK
 &trans  &trans          &trans      &trans      &trans      &trans                                                                      &kp LPAR    &kp KP_NUM  &kp KP_EQUAL    &kp KP_SLASH    &kp FR_ASTR     &kp PRINTSCREEN
@@ -166,7 +200,7 @@ The actual index of the layers is the one in keymap which are zero indexed.
             >;
         };
 
-        layer_Magic {
+        magic_layer {
             bindings = <
 &bt BT_CLR  &none            &none            &none            &none                                                                                                &none   &none   &none   &none   &bt BT_CLR_ALL
 &none       &none            &none            &none            &none            &none                                                                       &none   &none   &none   &none   &none   &none
@@ -176,6 +210,29 @@ The actual index of the layers is the one in keymap which are zero indexed.
 &none       &none            &none            &none            &none                            &bt_0   &bt_1  &out OUT_USB         &none   &none   &none           &none   &none   &none   &none   &none
             >;
         };
+
+        accent_layer {
+            bindings = <
+&none       &none       &none       &none       &none                                                                                               &none           &none           &none       &none       &none
+&none       &none       &none       &none       &none                   &none                                                           &none       &none           &none           &none       &none       &none
+&none       &none       &none       &fr_a_diaeresis &fr_a_circumflex    &none                                                           &none       &fr_i_circumflex &fr_i_diaeresis&none       &none       &none
+&none       &kp FR_EACU &kp FR_EGRV &fr_e_diaeresis &fr_e_circumflex    &none                                                           &none       &fr_o_circumflex &none          &none       &none       &none
+&none       &none       &kp FR_UGRV &fr_u_diaeresis &fr_u_circumflex    &none       &none   &none   &none       &none   &none   &none   &none       &none           &none           &none       &none       &none
+&none       &none       &none       &none       &none                               &none   &none   &none       &none   &none   &none               &none           &none           &none       &none       &none
+            >;
+        };
+        /*
+        layer_template {
+            bindings = <
+&none       &none       &none       &none       &none                                                                               &none       &none       &none       &none       &none
+&none       &none       &none       &none       &none   &none                                                           &none       &none       &none       &none       &none       &none
+&none       &none       &none       &none       &none   &none                                                           &none       &none       &none       &none       &none       &none
+&none       &none       &none       &none       &none   &none                                                           &none       &none       &none       &none       &none       &none
+&none       &none       &none       &none       &none   &none       &none   &none  &none        &none   &none   &none   &none       &none       &none       &none       &none       &none
+&none       &none       &none       &none       &none               &none   &none  &none        &none   &none   &none               &none       &none       &none       &none       &none
+            >;
+        };
+        */
 
     };
 };
