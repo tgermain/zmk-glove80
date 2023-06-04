@@ -34,9 +34,9 @@ Those numbers are meaningless.
 The actual index of the layers is the one in keymap which are zero indexed.
 */
 #define BASE    0
-#define LOWER    1
-#define MAGIC    2
-#define ACCENT   3
+#define LOWER   1
+#define MAGIC   2
+#define ACCENT  3
 
 / {
     /* Glove80 system behavior & macros */
@@ -50,9 +50,7 @@ The actual index of the layers is the one in keymap which are zero indexed.
             tapping-term-ms = <200>;
             bindings = <&mo LOWER>, <&to LOWER>;
         };
-    };
 
-    behaviors {
         s_d_cl: shift_double_capslock {
             compatible = "zmk,behavior-tap-dance";
             label = "shift_double_capslock";
@@ -70,9 +68,7 @@ The actual index of the layers is the one in keymap which are zero indexed.
             bindings
                 = <&rgb_ug RGB_STATUS>;
         };
-    };
 
-    macros {
         meh: meh_modifier {
             label = "MEH_MODIFIER";
             compatible = "zmk,behavior-macro";
@@ -83,7 +79,6 @@ The actual index of the layers is the one in keymap which are zero indexed.
                 , <&macro_release &kp LS(LC(LALT))>
                 ;
         };
-    };
 
 
     #define MACRO(name, keys)             \
@@ -96,7 +91,6 @@ The actual index of the layers is the one in keymap which are zero indexed.
         bindings = <keys>;                \
     };
 
-
     // french accentuated letters
     #define diaeresis(name, key)    \
     MACRO(fr_ ## name ## _diaeresis, &kp FR_DIAE &kp key)
@@ -104,7 +98,6 @@ The actual index of the layers is the one in keymap which are zero indexed.
     #define circumflex(name, key)    \
     MACRO(fr_ ## name ## _circumflex, &kp FR_CIRC &kp key)
 
-    macros {
         circumflex(a, Q)
         circumflex(e, E)
         circumflex(i, I)
@@ -118,48 +111,21 @@ The actual index of the layers is the one in keymap which are zero indexed.
     };
 
 
-    macros {
-        bt_0: bt_profile_macro_0 {
-            label = "BT_0";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&out OUT_BLE>,
-                  <&bt BT_SEL 0>;
-        };
+    #define BT_MACRO(name)                  \
+    bt_ ## name: bt_profile_macro_ ## name {\
+        label = "BT_ ## name";              \
+        compatible = "zmk,behavior-macro";  \
+        #binding-cells = <0>;               \
+        bindings                            \
+            = <&out OUT_BLE>                \
+            , <&bt BT_SEL name>;            \
     };
 
     macros {
-        bt_1: bt_profile_macro_1 {
-            label = "BT_1";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&out OUT_BLE>,
-                  <&bt BT_SEL 1>;
-        };
-    };
-
-    macros {
-        bt_2: bt_profile_macro_2 {
-            label = "BT_2";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&out OUT_BLE>,
-                  <&bt BT_SEL 2>;
-        };
-    };
-
-    macros {
-        bt_3: bt_profile_macro_3 {
-            label = "BT_3";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&out OUT_BLE>,
-                  <&bt BT_SEL 3>;
-        };
+        BT_MACRO(0)
+        BT_MACRO(1)
+        BT_MACRO(2)
+        BT_MACRO(3)
     };
 
     magic: magic_hold_tap {
