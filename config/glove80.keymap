@@ -177,8 +177,8 @@ From https://github.com/moergo-sc/zmk/blob/main/app/boards/arm/glove80/glove80.d
 &kp EQUAL   &kp N1      &kp N2  &kp N3      &kp N4      &kp N5                                                                                  &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp F11
 &kp TAB     &kp Q       &kp W   &kp E       &kp R       &kp T                                                                                   &kp Y   &kp U   &kp I       &kp O       &kp P       &kp F12
 &kp ESC     &kp A       &kp S   &kp D       &kp F       &kp G                                                                                   &kp H   &kp J   &kp K       &kp L       &kp SEMI    &sl ACCENT
-&s_d_cl     &kp Z       &kp X   &kp C       &kp V       &kp B       &kp BSPC        &s_d_cl &kp END         &kp PG_UP   &kp RCTRL   &kp RSHFT   &kp N   &kp M   &kp COMMA   &kp DOT     &kp FSLH    &kp KP_DOT
-&kp LCTRL   &kp LALT    &kp LGUI&kp LEFT    &kp RIGHT               &lt SYMBOL SPACE&meh    &kp HOME        &kp PG_DN   &kp RCTRL   &kp RET             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC BASE
+&kp LCTRL   &kp Z       &kp X   &kp C       &kp V       &kp B     &kp BSPC          &meh    &kp END       &kp PG_UP   &kp RCTRL   &kp RSHFT     &kp N   &kp M   &kp COMMA   &kp DOT     &kp FSLH    &kp KP_DOT
+&s_d_cl     &kp LALT    &kp LGUI&kp LEFT    &kp RIGHT             &lt SYMBOL SPACE  &s_d_cl &kp HOME      &kp PG_DN   &kp RCTRL   &kp RET               &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC BASE
             >;
         };
 
