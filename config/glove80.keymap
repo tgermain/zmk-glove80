@@ -111,6 +111,36 @@ The actual index of the layers is the one in keymap which are zero indexed.
         diaeresis(u, U)
     };
 
+/* key positions for combos
+From https://github.com/moergo-sc/zmk/blob/main/app/boards/arm/glove80/glove80.dtsi#L24-L29
+
+0   1   2   3   4                                       5   6   7   8   9
+10  11  12  13  14  15                              16  17  18  19  20  21
+22  23  24  25  26  27                              38  39  50  31  32  33
+34  35  36  37 (38) 39                              40 (41) 42  43  44  45  <- home row, and () are index
+46  47  48  49  50  51    52 53 54    55  56  57    58  59  60  61  62  63
+64  65  66  67  68        69 70 71    72  73  74        75  76  77  78  79
+
+*/
+    combos {
+      compatible = "zmk,combos";
+      combo_ctrl_c {
+        timeout-ms = <50>;
+        // ring + middle finger on left hand
+        key-positions = <36 37>;
+        bindings = <&kp LC(C)>;
+        layers = <BASE>;
+      };
+      combo_ctrl_v {
+        timeout-ms = <50>;
+        // middle finger + index on left hand
+        key-positions = <37 38>;
+        bindings = <&kp LC(V)>;
+        layers = <BASE>;
+      };
+    };
+
+
 
     #define BT_MACRO(name)                  \
     bt_ ## name: bt_profile_macro_ ## name {\
@@ -138,10 +168,6 @@ The actual index of the layers is the one in keymap which are zero indexed.
         bindings = <&mo>, <&rgb_ug_status_macro>;
     };
 
-    /* Custom Defined Behaviors */
-
-
-    /* Automatically generated keymap */
     keymap {
         compatible = "zmk,keymap";
 
