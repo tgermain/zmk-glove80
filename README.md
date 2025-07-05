@@ -1,13 +1,22 @@
 # tgermain MoErgo Glove80 Custom Configuration for ZMK
 
+## TODO
+
+- ctrl on left bottom corner is a bit far to be confortable
+- leftest keys on left side can be rearrange
+
 ## Build
+
+Start nix daemon `systemctl start nix-daemon.service`
 
 To build layout `nix-build config -o combined`
 
 This will generate the  `combined/glove80.uf2` file.
 
 You can then flash this file in your keyboard:
-- put your keyboard halve in bootloader mode. It will be recognize as a storage device by your OS
+- put your keyboard halve in bootloader mode.
+  -
+  - It will be recognize as a storage device by your OS
 - move the file in the storage device. No need to rename it.
 
 
@@ -22,3 +31,6 @@ Glove80 zmk disctribution is imported as git-submodules. See [here](https://devc
 Initial pull: `git submodule update --init --recursive`
 
 Update submodules: `git submodule update --remote --merge`
+
+
+## changelog
