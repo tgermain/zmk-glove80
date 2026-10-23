@@ -61,7 +61,22 @@ The actual index of the layers is the one in keymap which are zero indexed.
         };
     };
 
+    #define BT_MACRO(name)                  \
+    bt_ ## name: bt_profile_macro_ ## name {\
+        label = "BT_ ## name";              \
+        compatible = "zmk,behavior-macro";  \
+        #binding-cells = <0>;               \
+        bindings                            \
+            = <&out OUT_BLE>                \
+            , <&bt BT_SEL name>;            \
+    };
+
     macros {
+        BT_MACRO(0)
+        BT_MACRO(1)
+        BT_MACRO(2)
+        BT_MACRO(3)
+
         rgb_ug_status_macro: rgb_ug_status_macro_0 {
             label = "RGB_UG_STATUS";
             compatible = "zmk,behavior-macro";
@@ -141,24 +156,6 @@ From https://github.com/moergo-sc/zmk/blob/main/app/boards/arm/glove80/glove80.d
     };
 
 
-
-    #define BT_MACRO(name)                  \
-    bt_ ## name: bt_profile_macro_ ## name {\
-        label = "BT_ ## name";              \
-        compatible = "zmk,behavior-macro";  \
-        #binding-cells = <0>;               \
-        bindings                            \
-            = <&out OUT_BLE>                \
-            , <&bt BT_SEL name>;            \
-    };
-
-    macros {
-        BT_MACRO(0)
-        BT_MACRO(1)
-        BT_MACRO(2)
-        BT_MACRO(3)
-    };
-
     magic: magic_hold_tap {
         compatible = "zmk,behavior-hold-tap";
         label = "MAGIC_HOLD_TAP";
@@ -221,7 +218,7 @@ From https://github.com/moergo-sc/zmk/blob/main/app/boards/arm/glove80/glove80.d
 &none       &none            &none            &none            &none            &none                                                                       &none   &none   &none   &none   &none   &none
 &trans      &rgb_ug RGB_SPI  &rgb_ug RGB_SAI  &rgb_ug RGB_HUI  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG                                                             &none   &none   &none   &none   &none   &none
 &bootloader &rgb_ug RGB_SPD  &rgb_ug RGB_SAD  &rgb_ug RGB_HUD  &rgb_ug RGB_BRD  &rgb_ug RGB_EFF                                                             &none   &none   &none   &none   &none   &bootloader
-&reset      &none            &none            &none            &none            &none           &bt_2   &bt_3  &none                &none   &none   &none   &none   &none   &none   &none   &none   &reset
+&sys_reset  &none            &none            &none            &none            &none           &bt_2   &bt_3  &none                &none   &none   &none   &none   &none   &none   &none   &none   &sys_reset
 &none       &none            &none            &none            &none                            &bt_0   &bt_1  &out OUT_USB         &none   &none   &none           &none   &none   &none   &tog GAME&none
             >;
         };
