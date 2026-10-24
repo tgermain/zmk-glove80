@@ -60,6 +60,13 @@ The actual index of the layers is the one in keymap which are zero indexed.
             tapping-term-ms = <200>;
             bindings = <&kp LSHIFT>, <&kp CAPSLOCK>;
         };
+
+        bsp_del: backspace_delete {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp BSPC>, <&kp DEL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     #define BT_MACRO(name)                  \
@@ -176,7 +183,7 @@ From https://github.com/moergo-sc/zmk/blob/main/app/boards/arm/glove80/glove80.d
 &kp EQUAL         &kp FR_AMPR &kp FR_EACU &kp FR_DQUO &kp FR_QUOT &kp FR_LPRN                                                                            &kp FR_MINS &kp FR_EGRV &kp FR_UNDS &kp FR_CCED &kp FR_AGRV &kp F11
 &kp TAB           &kp FR_A    &kp FR_Z    &kp E       &kp R       &kp T                                                                                  &kp Y       &kp U       &kp I       &kp O       &kp P       &kp F12
 &kp ESC           &kp FR_Q    &kp S       &kp D       &kp F       &kp G                                                                                  &kp H       &kp J       &kp K       &kp L       &kp FR_M    &sl ACCENT
-&s_d_cl           &kp FR_W    &kp X       &kp C       &kp V       &kp B     &kp BSPC          &meh      &kp END      &kp PG_UP   &kp RCTRL   &kp RSHFT   &kp N       &kp FR_COMM &kp FR_SCLN &kp FR_COLN &kp FR_EXLM &kp FR_DOT
+&s_d_cl           &kp FR_W    &kp X       &kp C       &kp V       &kp B     &bsp_del          &meh      &kp END      &kp PG_UP   &kp RCTRL   &kp RSHFT   &kp N       &kp FR_COMM &kp FR_SCLN &kp FR_COLN &kp FR_EXLM &kp FR_DOT
 &magic MAGIC BASE &kp LALT    &kp LGUI    &kp LEFT    &kp RIGHT             &lt SYMBOL SPACE  &kp LCTRL &kp HOME     &kp PG_DN   &kp RALT    &kp RET                 &kp UP      &kp DOWN    &none       &none       &magic MAGIC BASE
             >;
         };

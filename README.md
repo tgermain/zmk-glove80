@@ -2,8 +2,7 @@
 
 ## TODO
 
-- ctrl on left bottom corner is a bit far to be confortable
-- leftest keys on left side can be rearrange
+- use https://github.com/caksoylar/keymap-drawer to generate image of layer
 
 ## Build
 
