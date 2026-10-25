@@ -17,3 +17,6 @@ righ_hand_flash: build
 	udisksctl mount -b /dev/disk/by-label/GLV80RHBOOT
 	cp combined/glove80.uf2 /run/media/${USER}/GLV80RHBOOT/CURRENT.UF2
 
+
+viz:
+	keymap -c keymap_viz.yaml parse  -z config/glove80.keymap | keymap -c keymap_viz.yaml draw  - > keymap.svg

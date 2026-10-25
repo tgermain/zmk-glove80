@@ -2,7 +2,7 @@
 
 ## TODO
 
-- use https://github.com/caksoylar/keymap-drawer to generate image of layer
+
 
 ## Build
 
@@ -32,4 +32,9 @@ Initial pull: `git submodule update --init --recursive`
 Update submodules: `git submodule update --remote --merge`
 
 
-## changelog
+## viz
+
+- use https://github.com/caksoylar/keymap-drawer to generate image of layer
+  - based on https://github.com/minusfive/knucklehead/blob/main/keymap-drawer/config.yaml
+
+![alt text](keymap.svg)

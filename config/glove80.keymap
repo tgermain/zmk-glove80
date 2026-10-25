@@ -25,7 +25,9 @@
 
 
 /* french helpers */
+#ifndef KEYMAP_DRAWER
 #include "keymap_french.h"
+#endif
 
 /*
 Layers
