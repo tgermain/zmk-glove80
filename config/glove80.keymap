@@ -181,12 +181,12 @@ From https://github.com/moergo-sc/zmk/blob/main/app/boards/arm/glove80/glove80.d
 
         base_layer {
             bindings = <
-&kp C_PP          &kp F2      &kp F3      &kp F4      &kp F5                                                                                                         &kp F6      &kp F7      &kp F8      &kp F9      &tog ERGOL
-&kp EQUAL         &kp FR_AMPR &kp FR_EACU &kp FR_DQUO &kp FR_QUOT &kp FR_LPRN                                                                            &kp FR_MINS &kp FR_EGRV &kp FR_UNDS &kp FR_CCED &kp FR_AGRV &kp F11
-&kp ESC           &kp FR_A    &kp FR_Z    &kp E       &kp R       &kp T                                                                                  &kp Y       &kp U       &kp I       &kp O       &kp P       &kp F12
-&kp TAB           &kp FR_Q    &kp S       &kp D       &kp F       &kp G                                                                                  &kp H       &kp J       &kp K       &kp L       &kp FR_M    &sl ACCENT
-&s_d_cl           &kp FR_W    &kp X       &kp C       &kp V       &kp B     &bsp_del          &meh      &kp END      &kp PG_UP   &kp RCTRL   &kp RSHFT   &kp N       &kp FR_COMM &kp FR_SCLN &kp FR_COLN &kp FR_EXLM &kp FR_DOT
-&magic MAGIC BASE &kp LALT    &kp LGUI    &kp LEFT    &kp RIGHT             &lt SYMBOL SPACE  &kp LCTRL &kp HOME     &kp PG_DN   &kp RALT    &kp RET                 &kp UP      &kp DOWN    &none       &kp RALT    &magic MAGIC BASE
+&kp C_PP          &kp F2      &kp F3      &kp F4      &kp F5                                                                                                         &kp F6      &kp F7      &kp F8      &kp F11     &tog ERGOL
+&kp EQUAL         &kp FR_AMPR &kp FR_EACU &kp FR_DQUO &kp FR_QUOT &kp FR_LPRN                                                                        &kp FR_MINS &kp FR_EGRV &kp FR_UNDS &kp FR_CCED &kp FR_AGRV &kp F12
+&kp ESC           &kp FR_A    &kp FR_Z    &kp E       &kp R       &kp T                                                                              &kp Y       &kp U       &kp I       &kp O       &kp P       &sl ACCENT
+&kp TAB           &kp FR_Q    &kp S       &kp D       &kp F       &kp G                                                                              &kp H       &kp J       &kp K       &kp L       &kp FR_M    &kp FR_DOT
+&s_d_cl           &kp FR_W    &kp X       &kp C       &kp V       &kp B     &meh             &bsp_del  &kp HOME    &kp PG_UP   &kp RCTRL   &s_d_cl   &kp N       &kp FR_COMM &kp FR_SCLN &kp FR_COLN &kp FR_EXLM &kp F9
+&magic MAGIC BASE &kp LALT    &kp LGUI    &kp LEFT    &kp RIGHT             &lt SYMBOL SPACE &kp LCTRL &kp END     &kp PG_DN   &kp RALT    &kp RET                   &kp UP      &kp DOWN    &none       &kp RALT    &magic MAGIC BASE
             >;
         };
 
@@ -203,12 +203,12 @@ From https://github.com/moergo-sc/zmk/blob/main/app/boards/arm/glove80/glove80.d
 
         symbol_layer {
             bindings = <
-&trans  &trans          &trans      &kp C_PREV  &kp C_NEXT                                                                                            &kp C_MUTE  &kp C_VOL_DN    &kp C_VOL_UP    &none           &kp PAUSE_BREAK
+&trans  &trans          &trans      &kp C_PREV  &kp C_NEXT                                                                                            &kp C_MUTE  &kp C_VOL_DN    &kp C_VOL_UP    &none           &trans
 &trans  &kp F1          &kp F2      &kp F3      &kp F4      &kp F5                                                                      &kp F6        &kp F7      &kp F8          &kp F9          &kp F10         &kp F11
 &trans  &kp FR_LABK     &kp FR_AT   &kp FR_LCBR &kp FR_RCBR &kp FR_PIPE                                                                 &kp FR_UNDS   &kp FR_7    &kp FR_8        &kp FR_9        &kp FR_MINS     &kp F12
 &trans  &kp FR_HASH     &kp FR_DLR  &kp FR_LPRN &kp FR_RPRN &kp FR_GRV                                                                  &kp FR_MINS   &kp FR_4    &kp FR_5        &kp FR_6        &kp FR_PLUS     &trans
 &trans  &kp FR_PERC     &kp FR_CIRC &kp FR_LBRC &kp FR_RBRC &kp FR_TILD     &trans  &trans  &to BASE            &trans  &trans  &trans  &kp KP_EQUAL  &kp FR_1    &kp FR_2        &kp FR_3        &kp FR_BSLS     &trans
-&trans  &kp CAPS        &kp INS     &trans      &trans                      &trans  &trans  &trans              &trans  &trans  &trans                &kp FR_0    &kp FR_DOT      &trans          &trans          &trans
+&trans  &trans          &trans     &trans      &trans                      &trans  &trans  &trans              &trans  &trans  &trans                &kp FR_0    &kp FR_DOT       &trans          &trans          &trans
             >;
         };
 
@@ -225,12 +225,12 @@ From https://github.com/moergo-sc/zmk/blob/main/app/boards/arm/glove80/glove80.d
 
         game_layer {
             bindings = <
-&kp C_PP    &kp F2      &kp F3  &kp F4    &kp F5                                                                                          &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
-&kp ESC     &kp N1      &kp N2  &kp N3    &kp N4    &kp N5                                                                        &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp F11
-&kp Y       &kp TAB     &kp Q   &kp W     &kp E     &kp R                                                                         &kp Y   &kp U   &kp I       &kp O       &kp P       &kp F12
-&kp H       &kp L       &kp A   &kp S     &kp D     &kp F                                                                         &kp H   &kp J   &kp K       &kp L       &kp SEMI    &sl ACCENT
-&kp N       &kp LSHIFT  &kp Z   &kp X     &kp C     &kp V   &kp G     &kp G   &kp END         &kp PG_UP   &kp RCTRL   &kp RSHFT   &kp N   &kp M   &kp COMMA   &kp DOT     &kp FSLH    &kp FR_DOT
-&kp LCTRL   &kp LCTRL   &kp LGUI&kp LEFT  &kp RIGHT         &kp SPACE &kp B   &kp HOME        &kp PG_DN   &kp RCTRL   &kp RET             &kp UP  &kp DOWN    &kp LBKT    &kp RBKT    &magic MAGIC BASE
+&kp C_PP    &kp F2      &kp F3   &kp F4    &kp F5                                                                                          &kp F6  &kp F7      &kp F8      &kp F9      &kp F10
+&kp ESC     &kp N1      &kp N2   &kp N3    &kp N4    &kp N5                                                                        &kp N6  &kp N7  &kp N8      &kp N9      &kp N0      &kp F11
+&kp Y       &kp TAB     &kp Q    &kp W     &kp E     &kp R                                                                         &kp Y   &kp U   &kp I       &kp O       &kp P       &kp F12
+&kp H       &kp L       &kp A    &kp S     &kp D     &kp F                                                                         &kp H   &kp J   &kp K       &kp L       &kp SEMI    &sl ACCENT
+&kp N       &kp LSHIFT  &kp Z    &kp X     &kp C     &kp V   &kp G     &kp G   &kp END         &kp PG_UP   &kp RCTRL   &kp RSHFT   &kp N   &kp M   &kp COMMA   &kp DOT     &kp FSLH    &kp FR_DOT
+&kp LCTRL   &kp LCTRL   &kp LGUI &kp LEFT  &kp RIGHT         &kp SPACE &kp B   &kp HOME        &kp PG_DN   &kp RCTRL   &kp RET             &kp UP  &kp DOWN    &trans      &trans      &magic MAGIC BASE
             >;
         };
 

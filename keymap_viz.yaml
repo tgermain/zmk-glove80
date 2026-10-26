@@ -40,7 +40,7 @@ parse_config:
   skip_binding_parsing: false
   raw_binding_map: {}
   sticky_label: $$mdi:gesture-tap-hold$$
-  toggle_label: toggle
+  toggle_label: $$mdi:toggle-switch$$
   tap_toggle_label: tap-toggle
   trans_legend:
     t: ▽
@@ -144,9 +144,12 @@ parse_config:
     POUND: '#'
     DOLLAR: $
     DLLR: $
+    DLR: $
     PERCENT: '%'
     PRCNT: '%'
+    FR_PERC: '%'
     CARET: ^
+    CIRC: ^
     AMPERSAND: '&'
     AMPS: '&'
     ASTERISK: '*'
@@ -156,6 +159,7 @@ parse_config:
     LPAR: (
     RIGHT_PARENTHESIS: )
     RPAR: )
+    RPRN: )
     EQUAL: '='
     PLUS: +
     MINUS: '-'
@@ -166,6 +170,7 @@ parse_config:
     QUESTION: '?'
     QMARK: '?'
     BACKSLASH: \
+    BSLS: \
     BSLH: \
     PIPE: '|'
     NON_US_BACKSLASH: \
@@ -183,23 +188,42 @@ parse_config:
     COMMA: ','
     LESS_THAN: <
     LT: <
+    LABK:
+      tap: <
+      shifted: '>'
     PERIOD: .
     DOT: .
     GREATER_THAN: '>'
     GT: '>'
-    LEFT_BRACKET: '['
-    LBKT: '['
-    LEFT_BRACE: '{'
-    LBRC: '{'
-    RIGHT_BRACKET: ']'
-    RBKT: ']'
-    RIGHT_BRACE: '}'
-    RBRC: '}'
-    GRAVE: '`'
-    TILDE: '~'
+    LBRC: '['
+    LCBR: '{'
+    RBRC: ']'
+    RCBR: '}'
+    GRV: '`'
+    TILD: '~'
     NON_US_HASH: '#'
     NUHS: '#'
     TILDE2: '~'
+    AMPR: "&"
+    EACU: "é"
+    DQUO: "\""
+    FR_QUOT: "'"
+    FR_LPRN: "("
+    FR_MINS: "-"
+    FR_EGRV: "è"
+    FR_UNDS: "_"
+    FR_CCED: "ç"
+    FR_AGRV: "à"
+    FR_COMM: ","
+    FR_SCLN: ";"
+    FR_COLN: ":"
+    FR_EXLM: "!"
+    LALT: "AltGr"
+    KP_EQUAL: "="
+    FR_UGRV: "ù"
+    LCTRL: "Ctrl"
+    RCTRL: "Ctrl"
+
     # Modifiers
     LSHIFT: $$mdi:apple-keyboard-shift$$
     LSHFT: $$mdi:apple-keyboard-shift$$
@@ -215,7 +239,7 @@ parse_config:
     PG_DN: $$mdi:transfer-down$$
 
         # Whitespace
-    ENTER:
+    RET:
       type: enter
       tap: $$mdi:keyboard-return$$
     ESC: $$mdi:keyboard-esc$$
@@ -230,6 +254,24 @@ parse_config:
       tap: $$mdi:backspace$$
     DELETE: $$mdi:backspace-reverse-outline$$
     DEL: $$mdi:backspace-reverse-outline$$
+        # Media
+    C_NEXT: $$mdi:skip-next$$
+    C_PREV: $$mdi:skip-previous$$
+    C_PP: $$mdi:play-pause$$
+
+    # Sound
+    C_MUTE: $$mdi:volume-off$$
+    C_VOL_UP: $$mdi:volume-high$$
+    C_VOL_DN: $$mdi:volume-low$$
+
+    HOME: $$mdi:arrow-collapse-up$$
+    END: $$mdi:arrow-collapse-down$$
+
+    LEFT_GUI: $$mdi:linux$$
+    LGUI: $$mdi:linux$$
+    RIGHT_GUI: $$mdi:linux$$
+    RGUI: $$mdi:linux$$
+    RALT: AltGr
   zmk_combos: {}
   zmk_preamble: '#define KEYMAP_DRAWER'
   zmk_additional_includes: []
@@ -245,3 +287,38 @@ parse_config:
     "&s_d_cl":
       tap: $$material:shift$$
       tl: $$material:shift_lock$$
+    "&rgb_ug_status_macro": $$mdi:led-outline$$
+    "&fr_a_diaeresis": ä
+    "&fr_e_diaeresis": ë
+    "&fr_u_diaeresis": ü
+    "&fr_i_diaeresis": ï
+    "&fr_a_circumflex": â
+    "&fr_e_circumflex": ê
+    "&fr_u_circumflex": û
+    "&fr_i_circumflex": î
+    "&fr_o_circumflex": ô
+    '&out OUT_USB':
+      tap: $$mdi:keyboard$$ 
+      right: $$mdi:usb$$
+      type: sym_by_sym
+    '&bt BT_CLR':
+      tap: $$mdi:bluetooth-settings$$
+      right: $$mdi:close-thick$$
+      type: sym_sub_text
+    '&bootloader':
+      tap:     $$mdi:flash$$
+      right: $$mdi:micro-sd$$
+    '&sys_reset':
+      tap: $$material:reset_wrench$$
+    '&bt_0':
+      tap: $$mdi:bluetooth-connect$$
+      right: '0'
+    '&bt_1':
+      tap: $$mdi:bluetooth-connect$$
+      right: '1'
+    '&bt_2':
+      tap: $$mdi:bluetooth-connect$$
+      right: '2'
+    '&bt_3':
+      tap: $$mdi:bluetooth-connect$$
+      right: '3'
